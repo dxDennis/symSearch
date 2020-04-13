@@ -2,6 +2,7 @@ twig:
   globals:
     name: '%app.name%'
     version: '%app.version%'
+    environment: '%env(resolve:APP_ENV)%'
 
   default_path: '%kernel.project_dir%/templates'
   form_theme: 'bootstrap_4_layout.html.twig'
