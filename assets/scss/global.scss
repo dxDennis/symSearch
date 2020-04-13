@@ -1,3 +1,10 @@
+$image-path: "/../img" !default;
+
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~bootstrap/scss/bootstrap";
-@import "app";
+@import "../vendor/MDB-Pro_4.15.0/scss/mdb-pro";
+
+html, body {
+  height: 100%;
+  background-image: linear-gradient(to bottom, #39577d 0, #189eff 100%);
+}

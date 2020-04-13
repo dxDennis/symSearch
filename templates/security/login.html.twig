@@ -2,47 +2,89 @@
 
 {% block title %}Log in!{% endblock %}
 
-{% block header %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block body_class %}login-index d-flex flex-column h-100{% endblock %}
+ {% block stylesheets %}
+     {{ encore_entry_link_tags('login') }}
+ {% endblock %}
 
-{% block content %}
-    <div class="row">
-        <div class="col">
-            <form method="post">
-                {% if error %}
-                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                {% endif %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('login') }}
+{% endblock %}
 
-                {% if app.user %}
-                    <div class="mb-3">
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                    </div>
-                {% endif %}
+{% block body %}
 
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <label for="inputEmail">Email</label>
-                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
-                       required autofocus>
-                <label for="inputPassword">Password</label>
-                <input type="password" name="password" id="inputPassword" class="form-control" required>
+    {% block loginContainer %}
+        <div class="container-fluid">
 
-                <input type="hidden" name="_csrf_token"
-                       value="{{ csrf_token('authenticate') }}"
-                >
-
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" name="_remember_me"> Remember me
-                    </label>
+            <div class="decoration-elements">
+                <div class="cross"></div>
+                <div class="cross-small"></div>
+                <div class="bubble"></div>
+                <div class="bubble-small"></div>
+            </div>
+            <main class="flex-shrink-0" role="main">
+            <div class="row">
+                <div class="col">&nbsp;
                 </div>
+                <div class="col-md-10 col-lg-4">
+                    <div class="card card-body login--container text-center">
+                        <form method="post">
+                            {% if error %}
+                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
 
+                            {% if app.user %}
+                                <div class="mb-3">
+                                    <h5>You are logged in as <strong>{{ app.user.username }}</strong></h5>
+                                    <p><br></p>
+                                    <a href="{{ path('app_logout') }}" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light" type="submit">
+                                        Logout
+                                    </a><hr/>
+                                    <a href="{{ path('main') }}">Back to Dashboard</a>
+                                </div>
+                            {% else %}
 
-                <button class="btn btn-lg btn-primary" type="submit">
-                    Sign in
-                </button>
-                <hr/>
-                <a href="{{ path('app_register') }}">Register</a> &middot; <a href="">reset password</a>
-            </form>
+                            <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+                            <div class="md-form">
+                            <label for="inputEmail">Your Email</label>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                                   class="form-control"
+                                   required>
+                            </div>
+
+                            <div class="md-form">
+                            <label for="inputPassword">Your Password</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" required>
+                                <p class="text-right"><small><a href="">Forgot Password?</a></small></p>
+                            </div>
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}"
+                            >
+
+                            <div class="mb-3 text-left">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="_remember_me" id="defaultLoginFormRemember">
+                                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                                </div>
+                            </div>
+
+                            <button class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light" type="submit">
+                                Sign in
+                            </button>
+
+                            <hr/>
+                            <small>
+                            Not a member? <a href="{{ path('app_register') }}">Sign up</a>
+                            </small>
+
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+                <div class="col-1">&nbsp;</div>
+            </div>
+            </main>
         </div>
-    </div>
+    {% endblock %}
+
 {% endblock %}

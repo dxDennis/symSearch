@@ -1,0 +1,221 @@
+@import "global";
+
+
+
+.container-fluid main {
+  margin-top: 10%;
+}
+
+.btn.peach-gradient {
+  background: -webkit-linear-gradient(50deg, #FFD86F, #FC6262) !important;
+  background: linear-gradient(40deg, #FFD86F, #FC6262) !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.peach-gradient {
+  background: -webkit-linear-gradient(50deg, #FFD86F, #FC6262);
+  background: linear-gradient(40deg, #FFD86F, #FC6262);
+}
+
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  z-index: 1;
+}
+
+.decoration-elements {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@-ms-keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@-o-keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.decoration-elements .cross {
+  width: 7.5rem;
+  height: 7.5rem;
+  -webkit-animation: spin 50s linear infinite;
+  -moz-animation: spin 50s linear infinite;
+  -o-animation: spin 50s linear infinite;
+  animation: spin 50s linear infinite;
+  position: absolute;
+  opacity: .1;
+  top: 35%;
+  left: 9%
+}
+
+.decoration-elements .cross:after, .decoration-elements .cross:before {
+  height: 7.5rem;
+  width: .9375rem;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  position: absolute;
+  content: '';
+  background: #fff
+}
+
+.decoration-elements .cross:after {
+  left: 3.28125rem;
+  transform: rotate(-45deg)
+}
+
+.decoration-elements .cross:before {
+  left: 3.28125rem;
+  transform: rotate(45deg)
+}
+
+.decoration-elements .cross-small {
+  width: 3.125rem;
+  height: 3.125rem;
+  position: absolute;
+  opacity: .1;
+  top: 60%;
+  left: 7%
+}
+
+.decoration-elements .cross-small:after, .decoration-elements .cross-small:before {
+  height: 3.125rem;
+  width: .4375rem;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  transition: all .3s ease-in;
+  position: absolute;
+  content: '';
+  background: #fff
+}
+
+.decoration-elements .cross-small:after {
+  left: 1.34375rem;
+  transform: rotate(-45deg)
+}
+
+.decoration-elements .cross-small:before {
+  left: 1.34375rem;
+  transform: rotate(45deg)
+}
+
+.decoration-elements .bubble {
+  -webkit-animation: spin 20s linear infinite;
+  -moz-animation: spin 20s linear infinite;
+  -o-animation: spin 20s linear infinite;
+  animation: spin 20s linear infinite;
+  height: 6.25rem;
+  width: 9.375rem;
+  position: absolute;
+  opacity: .15;
+  right: 10%;
+  top: 30%
+}
+
+.decoration-elements .bubble:before {
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border-radius: 150px;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  height: 9.375rem;
+  width: 9.375rem;
+  background: #fff;
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0
+}
+
+.decoration-elements .bubble-small {
+  -webkit-animation: spin 25s linear infinite;
+  -moz-animation: spin 25s linear infinite;
+  -o-animation: spin 25s linear infinite;
+  animation: spin 25s linear infinite;
+  height: 1.875rem;
+  width: 3.125rem;
+  position: absolute;
+  opacity: .15;
+  right: 7%;
+  top: 52%
+}
+
+.decoration-elements .bubble-small:before {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  height: 3.125rem;
+  width: 3.125rem;
+  background: #fff;
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0
+}
+
+.is-login-action .login-toggle, .is-login-action .register-toggle, .product-preview-row .product-preview-body {
+  -webkit-transition: all .35s cubic-bezier(.4, 0, .2, 1);
+  -moz-transition: all .35s cubic-bezier(.4, 0, .2, 1);
+  -ms-transition: all .35s cubic-bezier(.4, 0, .2, 1);
+  -o-transition: all .35s cubic-bezier(.4, 0, .2, 1)
+}

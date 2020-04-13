@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Form\EditArticleType;
 use App\Repository\ArticlesRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/article", name="article")
  */
-class ArticleController extends AbstractController
+class ArticleController extends BagSearchController
 {
     /**
      * @Route("/view",name=".view" )
