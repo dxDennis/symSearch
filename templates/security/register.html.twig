@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <div class="well">
+                <h3>Register here</h3>
+                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias assumenda deserunt dicta
+                    est, ex exercitationem fugit hic ipsa necessitatibus odit perferendis. Amet animi mollitia nesciunt
+                    odio pariatur, quo unde?</p>
+                <hr>
+                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias assumenda deserunt dicta
+                    est, ex exercitationem fugit hic ipsa necessitatibus odit perferendis. Amet animi mollitia nesciunt
+                    odio pariatur, quo unde?</p>
+            </div>
+        </div>
+        <div class="col">
+            {{ form(registerForm) }}
+        </div>
+    </div>
+{% endblock %}

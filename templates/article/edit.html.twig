@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Article{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        {% if sArticleId >0 %}
+            <div class="col-md-2">
+                <div class="card">
+                    <svg class="bd-placeholder-img  img-thumbnail" width="200" height="200" xmlns="http://www.w3.org/2000/svg"
+                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                         aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 200x200">
+                        <title>A generic square placeholder image with a white border around it, making it resemble a
+                            photograph taken with an old instant camera</title>
+                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                        <text x="50%" y="45%" fill="#dee2e6" dy=".3em">Article {{ sArticleId }}</text>
+                        <text x="50%" y="60%" fill="#dee2e6" dy=".3em">200x200</text>
+                    </svg>
+                </div>
+
+            </div>
+        {% endif %}
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h3><strong>Edit Article</strong></h3>
+                </div>
+                <div class="card-body">
+                    {{ form(articleForm) }}
+                    <a href="{{ path('article.edit') }}">Create new Article</a> &middot;
+                    <a href="{{ path('article.view') }}">Back to Article list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

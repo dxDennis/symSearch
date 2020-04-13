@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-body">
+            <h3>Article List</h3>
+            <div class="card">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>SKU</th>
+                        <th>Article</th>
+                        <th>EAN</th>
+                        <th class="text-right row-function"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for article in  sArticles %}
+                        <tr>
+                            <th>{{ article.id }}</th>
+                            <td>{{ article.sku }}</td>
+                            <td><a data-toggle="tooltip" data-placement="top" title="View article details" class=""
+                                   href="{{ path('article.detail',{id:article.id}) }}"><strong>{{ article.name }}</strong></a>
+                            </td>
+                            <td>{{ article.ean }}</td>
+                            <td class="text-right row-function">
+                                <div class="dropdown">
+                                    <div role="button" data-toggle="dropdown" aria-haspopup="true"
+                                         aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </div>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a data-toggle="tooltip" data-placement="top" title="View article details"
+                                           class="dropdown-item"
+                                           href="{{ path('article.detail',{id:article.id}) }}"><i
+                                                    class="fas fa-file-alt"></i>&nbsp; View</a>
+                                        <a data-toggle="tooltip" data-placement="top" title="Edit article"
+                                           class="dropdown-item"
+                                           href="{{ path('article.edit',{id:article.id}) }}"><i
+                                                    class="fas fa-pen"></i>&nbsp;Edit</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a data-toggle="tooltip" data-placement="top" title="delete this article"
+                                           class="dropdown-item text-danger" onclick="return confirm('Are you sure?')" href="{{ path('article.new') }}"><i
+                                                    class="fas fa-trash-alt"></i>&nbsp;Delete</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <a class="btn btn-success" data-toggle="tooltip" data-placement="top" title="add a new article"
+                   href="{{ path('article.edit') }}"><i class="fa fa-plus"></i>&nbsp;Add new</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

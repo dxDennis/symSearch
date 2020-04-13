@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Dennis Decker">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body class="{% block body_class %}index--main d-flex flex-column h-100{% endblock %}">
+{% block body %}
+    <header>
+        {% block header %}
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                {% block nav %}
+                    {% include 'navigation/navigation.html.twig' %}
+                {% endblock %}
+            </nav>
+        {% endblock %}
+
+    </header>
+    <main>
+        <div class="container">
+            <div class="messages">
+                {% block messages %}
+                    {% include 'main/messages.html.twig' %}
+                {% endblock %}
+            </div>
+            {% block container %}
+                <div class="content">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+
+            {% endblock %}
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3">
+        {% block footer %}
+            <div class="container text-center text-muted"><p>
+                    {{ name }} {{ version }} - {{ controller_name }}
+                </p></div>
+        {% endblock %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+</html>

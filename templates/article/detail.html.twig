@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-header">
+            <h3>{{ sArticle.name }}</h3>
+            <small>{{ sArticle.sku }} - {{ sArticle.sku }}</small>
+        </div>
+        <div class="card-body">
+            {{ sArticle.description }}
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-default" href="{{ path('article.view') }}">zurück</a>
+            <a class="btn btn-danger" href="#delete">Löschen</a>
+        </div>
+    </div>
+
+{% endblock %}

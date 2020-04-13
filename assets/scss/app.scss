@@ -1,0 +1,31 @@
+body{
+  border-top:3px solid;
+  background: antiquewhite;
+}
+main > .container {
+  padding: 60px 15px 0;
+}
+
+tbody tr td.row-function{
+  cursor: pointer;
+}
+thead tr th.row-function,
+thead tr td.row-function{
+  width: 2%;
+}
+
+.footer {
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
